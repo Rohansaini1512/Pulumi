@@ -8,7 +8,7 @@ const vpc = new awsx.ec2.Vpc("vpc",{
     cidrBlock: "10.0.0.0/16"
 })
 
-const eks = new eks.Cluster("cluster",{
+const cluster = new eks.Cluster("cluster",{
     vpcId: vpc.id,
     subnetIds: vpc.publicSubnetIds,
     instanceType: "t2.medium"
